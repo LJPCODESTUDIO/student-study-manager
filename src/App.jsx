@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router';
 import Home from './pages/Home';
 import StudyPlanner from './pages/StudyPlanner';
 import './App.css';
@@ -9,11 +9,21 @@ function App() {
       <nav>
         <h3>Study Manager</h3>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/StudyPlanner">Study Planner</Link></li>
+          <li><NavLink
+            to="/"
+            className={({isActive}) => isActive ? "btn disabled" : "btn"}
+          >
+            Home
+          </NavLink></li>
+          <li><NavLink
+            to="/StudyPlanner"
+            className={({isActive}) => isActive ? "btn disabled" : "btn"}
+          >
+            Study Planner
+          </NavLink></li>
         </ul>
       </nav>
-      
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/StudyPlanner' element={<StudyPlanner />} />

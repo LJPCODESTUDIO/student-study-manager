@@ -14,7 +14,7 @@ function Home() {
           <li>See the total number of activities</li>
         </ul>
       </div>
-      <Link to="/StudyPlanner">Continue to Study Planner &gt;&gt;</Link>
+      <Link to="/StudyPlanner" className="btn">Continue to Study Planner &gt;&gt;</Link>
     </div>
   );
 }

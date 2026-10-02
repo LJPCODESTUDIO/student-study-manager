@@ -2,6 +2,7 @@
   --primary: #dddddd;
   --secondary: #0c172c;
   --secondary-font: #dddddd;
+  --btn: #244dbd;
 }
 
 body {
@@ -27,4 +28,20 @@ nav ul {
 
 .page-body {
   padding: 0 15px;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--btn);
+  color: var(--secondary-font);
+  padding: 10px;
+}
+
+.btn:hover {
+  background-color: lch(from var(--btn) calc(l - 15) c h);
+}
+
+.btn.disabled {
+  background-color: lch(from var(--btn) calc(l - 15) c h);
+  cursor: default;
 }
