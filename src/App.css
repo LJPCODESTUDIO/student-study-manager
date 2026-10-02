@@ -1,6 +1,7 @@
 :root {
   --primary: #dddddd;
-  --secondary: #0c172c;
+  --primary-accent: #cfcfcf;
+  --secondary: #12213d;
   --secondary-font: #dddddd;
   --btn: #244dbd;
 }
@@ -27,7 +28,7 @@ nav ul {
 }
 
 .page-body {
-  padding: 0 15px;
+  padding: 5px 15px;
 }
 
 .btn {
@@ -44,4 +45,16 @@ nav ul {
 .btn.disabled {
   background-color: lch(from var(--btn) calc(l - 15) c h);
   cursor: default;
+}
+
+.h-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5px;
+}
+
+.box-item {
+  margin: 5px;
+  background-color: var(--primary-accent);
+  padding: 10px;
 }
