@@ -37,6 +37,7 @@ nav ul {
   background-color: var(--btn);
   color: var(--secondary-font);
   padding: 10px;
+  border: none;
 }
 
 .btn:hover {
@@ -83,7 +84,7 @@ nav ul {
   font-weight: bold;
 }
 
-ul {
+.study-list {
   list-style-type: none;
   margin: 0;
   padding: 0;

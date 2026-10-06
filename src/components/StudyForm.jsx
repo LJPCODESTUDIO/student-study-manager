@@ -1,8 +1,21 @@
-function StudyForm() {
-  return (
-    <div>
+import { useState } from "react";
 
-    </div>
+function StudyForm(props) {
+  const [activity, setActivity] = useState("");
+  const [course, setCourse] = useState("");
+
+  return (
+    <form id="study-form" onSubmit={props.onSubmit}>
+      <h2>Add a New Activity</h2>
+
+      <label htmlFor="activity">Activity: </label>
+      <input type="text" id="activity" placeholder="Enter the activity here" value={activity} required onChange={(event) => setActivity(event.target.value)} />
+      <br />
+      <label htmlFor="course">Course: </label>
+      <input type="text" id="course" placeholder="What course is it for?" value={course} required onChange={(event) => setCourse(event.target.value)} />
+      <br />
+      <input className="btn" type="submit" value="Submit" />
+    </form>
   );
 }
 

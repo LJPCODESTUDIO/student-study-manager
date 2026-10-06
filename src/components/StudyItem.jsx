@@ -3,7 +3,7 @@ function StudyItem(props) {
     <li className="study-item">
       <div>
         <h3>{props.activity}</h3>
-        <p>{props.class}</p>
+        <p>{props.course}</p>
       </div>
       <div>
         <button className="btn-remove" onClick={props.onRemove}>Remove</button>
