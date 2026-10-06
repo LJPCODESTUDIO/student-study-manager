@@ -7,7 +7,11 @@ function StudyForm(props) {
   return (
     <form id="study-form" onSubmit={props.onSubmit}>
       <h2>Add a New Activity</h2>
-
+      <ul className="errors">
+        {props.errors.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
       <label htmlFor="activity">Activity: </label>
       <input type="text" id="activity" placeholder="Enter the activity here" value={activity} required onChange={(event) => setActivity(event.target.value)} />
       <br />
