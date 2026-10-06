@@ -4,6 +4,7 @@
   --secondary: #12213d;
   --secondary-font: #dddddd;
   --btn: #244dbd;
+  --btn-remove: #db3131;
 }
 
 body {
@@ -57,4 +58,33 @@ nav ul {
   margin: 5px;
   background-color: var(--primary-accent);
   padding: 10px;
+}
+
+.study-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 10px;
+  margin: 10px 10px;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.study-item h3 {
+  line-height: 0;
+}
+
+.btn-remove {
+  background-color: var(--btn-remove);
+  border: none;
+  padding: 10px 15px;
+  color: var(--secondary-font);
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
