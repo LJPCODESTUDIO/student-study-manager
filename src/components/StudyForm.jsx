@@ -17,7 +17,7 @@ function StudyForm(props) {
       <br />
       <label htmlFor="course">Course: </label>
       <input type="text" id="course" placeholder="What course is it for?" value={course} required onChange={(event) => setCourse(event.target.value)} />
-      <br />
+      <br /><br />
       <input className="btn" type="submit" value="Submit" />
     </form>
   );

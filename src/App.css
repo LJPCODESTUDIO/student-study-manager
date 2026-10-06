@@ -5,6 +5,7 @@
   --secondary-font: #dddddd;
   --btn: #244dbd;
   --btn-remove: #db3131;
+  --error: #db3131;
 }
 
 body {
@@ -67,7 +68,7 @@ nav ul {
   align-items: center;
   background-color: var(--primary);
   padding: 10px;
-  margin: 10px 10px;
+  margin-bottom: 10px;
   list-style-type: none;
   flex-wrap: wrap;
 }
@@ -84,8 +85,27 @@ nav ul {
   font-weight: bold;
 }
 
+.btn-remove:hover {
+  background-color: lch(from var(--btn-remove) calc(l - 15) c h);
+}
+
 .study-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+#study-form {
+  background-color: var(--primary);
+  padding: 10px;
+}
+
+#study-form>input {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.errors {
+  color: var(--error);
+  font-size: small;
 }
