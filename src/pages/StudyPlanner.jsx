@@ -16,15 +16,16 @@ function StudyPlanner() {
     <div className="page-body">
       <div className="h-box">
         <div className="box-item"><StudyForm onSubmit={(event) => newActivity(event, setFormErrors, setActivities)} errors={formErrors}/></div>
-          <PieChart
+        <div className="box-item">
+          <PieChart className="progress-chart"
             data={[
               {title: "Complete", value: completed.length, color: "#63ffff"},
               {title: "Incomplete", value: activities.length, color: "#db3131"},
             ]}
             startAngle={270}
             lengthAngle={-360}
-            viewBoxSize={[200, 200]}
-            />
+          />
+        </div>
       </div>
       <div className="box-item">
         {activities.length === 0 ? (

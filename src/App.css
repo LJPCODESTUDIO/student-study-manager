@@ -111,6 +111,7 @@ nav ul {
 #study-form {
   background-color: var(--primary);
   padding: 10px;
+  height: calc(100% - 20px);
 }
 
 #study-form>input {
@@ -121,4 +122,11 @@ nav ul {
 .errors {
   color: var(--error);
   font-size: small;
+}
+
+.progress-chart {
+  background-color: var(--primary);
+  padding: 10px;
+  height: 200px;
+  width: calc(100% - 20px);
 }
