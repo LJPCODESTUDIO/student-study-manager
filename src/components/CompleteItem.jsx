@@ -6,7 +6,7 @@ function CompleteItem(props) {
         <p>{props.course}</p>
       </div>
       <div>
-        <button className="btn-edit" onClick={props.onEdit}>Mark Incompleted</button>
+        <button className="btn-edit" onClick={props.onEdit}>Mark Incomplete</button>
       </div>
     </li>
   );

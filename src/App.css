@@ -63,7 +63,7 @@ nav ul {
   padding: 10px;
 }
 
-.study-item {
+.study-item, .complete-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,7 +74,7 @@ nav ul {
   flex-wrap: wrap;
 }
 
-.study-item h3 {
+.study-item h3, .complete-item h3 {
   line-height: 0;
 }
 
@@ -88,6 +88,7 @@ nav ul {
 
 .btn-remove:hover {
   background-color: lch(from var(--btn-remove) calc(l - 15) c h);
+  cursor: pointer;
 }
 
 .btn-edit {
@@ -100,6 +101,7 @@ nav ul {
 
 .btn-edit:hover {
   background-color: lch(from var(--btn-edit) calc(l - 15) c h);
+  cursor: pointer;
 }
 
 .study-list {
