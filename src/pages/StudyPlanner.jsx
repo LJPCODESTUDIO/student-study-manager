@@ -52,12 +52,13 @@ function StudyPlanner() {
     const completedActivity = activities.filter(
       (item, index) => index == indexToComplete
     );
+    console.log(completedActivity);
 
     const updatedActivities = activities.filter(
       (item, index) => index != indexToComplete
     );
 
-    setCompleted(prevList => [...prevList, completedActivity]);
+    setCompleted(prevList => [...prevList, completedActivity[0]]);
     setActivities(() => updatedActivities);
   }
 
@@ -66,13 +67,14 @@ function StudyPlanner() {
     const incompleteActivity = completed.filter(
       (item, index) => index == indexToComplete
     );
+    console.log(incompleteActivity);
 
     const updatedActivities = completed.filter(
       (item, index) => index != indexToComplete
     );
 
     setCompleted(() => updatedActivities);
-    setActivities(prevList => [...prevList, incompleteActivity]);
+    setActivities(prevList => [...prevList, incompleteActivity[0]]);
   }
 
   return (
