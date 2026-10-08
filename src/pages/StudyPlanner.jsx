@@ -10,6 +10,8 @@ function StudyPlanner() {
   const [activities, setActivities] = useState([]);
   const [completed, setCompleted] = useState([]);
   const [formErrors, setFormErrors] = useState([]);
+  const [activity, setActivity] = useState("");
+  const [course, setCourse] = useState("");
 
   function validateInput(input, invalidMsg) {
     if (input.value.trim() === "") {
@@ -31,12 +33,14 @@ function StudyPlanner() {
 
     if (newActivity === "" || newCourse === "") return;
 
-    const json = {
-      "activity": newActivity,
-      "course": newCourse
+    const activity = {
+      activity: newActivity,
+      course: newCourse
     };
     
-    setActivities(prevList => [...prevList, json]);
+    setActivity("");
+    setCourse("");
+    setActivities(prevList => [...prevList, activity]);
   }
 
   function removeActivity(indexToRemove) {
@@ -86,19 +90,49 @@ function StudyPlanner() {
   return (
     <div className="page-body">
       <div className="h-box">
-        <div className="box-item"><StudyForm onSubmit={newActivity} errors={formErrors}/></div>
+        <div className="box-item"><StudyForm
+          onSubmit={newActivity}
+          errors={formErrors}
+          activity={activity} setActivity={(event) => setActivity(event.target.value)}
+          course={course} setCourse={(event) => setCourse(event.target.value)}
+        /></div>
         <div className="box-item">
-          <PieChart className="progress-chart"
-            data={[
-              {title: "Complete", value: completed.length, color: "#63ffff"},
-              {title: "Incomplete", value: activities.length, color: "#db3131"},
-            ]}
-            startAngle={270}
-            lengthAngle={-360}
-          />
+          {(activities.length === 0) && (completed.length === 0) ? (
+            <div className="progress-chart">
+              <PieChart
+                data={[
+                  {title: "No activities yet", value: 1, color: "#00b32d"}
+                ]}
+                label={({dataEntry}) => `${dataEntry.title}`}
+                labelStyle={{
+                  fontSize: '10px',
+                  fontWeight: 'bold'
+                }}
+                labelPosition={0}
+              />
+            </div>
+          ) : (
+            <div className="progress-chart">
+              <PieChart
+                data={[
+                  {title: "Complete", value: completed.length, color: "#63ffff"},
+                  {title: "Incomplete", value: activities.length, color: "#db3131"},
+                ]}
+                startAngle={270}
+                lengthAngle={-360}
+                label={({dataEntry}) => `${dataEntry.title[0]}: ${dataEntry.value}`}
+                labelStyle={{
+                  fontSize: '10px',
+                  fontWeight: 'bold'
+                }}
+              />
+            </div>
+          )}
+          
         </div>
       </div>
       <div className="box-item">
+        <h2>Incomplete Activities</h2>
         {activities.length === 0 ? (
           <p>There are currently no study activies to do.</p>  
         ) : (
@@ -116,6 +150,7 @@ function StudyPlanner() {
         )}
       </div>
       <div className="box-item">
+        <h2>Completed Activities</h2>
         {completed.length === 0 ? (
           <p>There are currently no completed activities.</p>  
         ) : (
