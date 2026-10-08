@@ -47,12 +47,19 @@ function StudyPlanner() {
     setActivities(() => updatedActivities);
   }
 
+  function removeComplete(indexToRemove) {
+    const updatedCompleted = completed.filter(
+      (item, index) => index != indexToRemove
+    );
+
+    setCompleted(() => updatedCompleted);
+  }
+
   function markComplete(indexToComplete)
   {
     const completedActivity = activities.filter(
       (item, index) => index == indexToComplete
     );
-    console.log(completedActivity);
 
     const updatedActivities = activities.filter(
       (item, index) => index != indexToComplete
@@ -67,7 +74,6 @@ function StudyPlanner() {
     const incompleteActivity = completed.filter(
       (item, index) => index == indexToComplete
     );
-    console.log(incompleteActivity);
 
     const updatedActivities = completed.filter(
       (item, index) => index != indexToComplete
@@ -120,6 +126,7 @@ function StudyPlanner() {
               activity={item.activity}
               course={item.course}
               onEdit={() => markIncomplete(index)}
+              onRemove={() => removeComplete(index)}
             />
           ))}
         </ul>

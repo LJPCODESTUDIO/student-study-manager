@@ -78,6 +78,10 @@ nav ul {
   line-height: 0;
 }
 
+.btn-div>* {
+  margin: 5px;
+}
+
 .btn-remove {
   background-color: var(--btn-remove);
   border: none;
