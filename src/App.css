@@ -5,6 +5,7 @@
   --secondary-font: #dddddd;
   --btn: #244dbd;
   --btn-remove: #db3131;
+  --btn-edit: #63ffff;
   --error: #db3131;
 }
 
@@ -87,6 +88,18 @@ nav ul {
 
 .btn-remove:hover {
   background-color: lch(from var(--btn-remove) calc(l - 15) c h);
+}
+
+.btn-edit {
+  background-color: var(--btn-edit);
+  border: none;
+  padding: 10px 15px;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.btn-edit:hover {
+  background-color: lch(from var(--btn-edit) calc(l - 15) c h);
 }
 
 .study-list {
