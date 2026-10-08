@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div class="page-body">
+    <div className="page-body">
       <h1>Welcome to Your Study Manager!</h1>
       <p>This application helps you keep track of, and manage your study activies.</p>
       <div className="feature-box">
