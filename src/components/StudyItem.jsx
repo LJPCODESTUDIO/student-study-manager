@@ -7,6 +7,7 @@ function StudyItem(props) {
       </div>
       <div>
         <button className="btn-remove" onClick={props.onRemove}>Remove</button>
+        <button className="btn-edit" onClick={props.onEdit}>Mark Completed</button>
       </div>
     </li>
   );
